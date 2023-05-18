@@ -115,7 +115,49 @@ namespace AddressBookSystem
 
             }
 
-       
+            //deleting
+
+            Console.WriteLine("Do you want to delete contact press 1 to delete or press 2 to cancle.");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            while (num == 1 && contactList.Count > 0)
+            {
+                Console.WriteLine("Enter contact First name");
+                string firstName = Console.ReadLine();
+
+                bool found = false;
+                for (int i = 0; i < contactList.Count; i++)
+                {
+
+                    if (contactList[i].FirstName == firstName)
+                    {
+                        found = true;  
+
+                        contactList.RemoveAt(i);
+                        break;
+
+                    }
+                }
+
+                if (found)
+                {
+                    if (contactList.Count == 0) 
+                        break;
+                }
+                else
+                    Console.WriteLine("the contact with given person '{0}' is not in address book", firstName);
+
+                Console.WriteLine("Current contacts in adress book");
+                foreach (ContactClass contact in contactList)
+                {
+                    Console.WriteLine(contact.FirstName);
+                }
+                Console.WriteLine("Do you want to delete contact press 1 to delete or press 2 to cancle.");
+                num = Convert.ToInt32(Console.ReadLine());
+
+            }//while end
+
+
         }
     }
 }
