@@ -9,12 +9,13 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome to Address Book Program in AddressBookMain class on main branch");
 
+
+
             //ContactClass contact = new ContactClass();
 
-            AddressBookMain addressBookMain = new AddressBookMain();
-            addressBookMain.AddNewContact();
+            AddressBookMain.AddNewContact();
 
-            addressBookMain.Display();
+            
 
             //Console.WriteLine("Enter First Name");
             //contact.FirstName = Console.ReadLine();
